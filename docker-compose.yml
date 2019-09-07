@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  postgres:
+    image: postgres:10.10
+    ports:
+      - "9432:5432"
+    environment:
+      - POSTGRES_USER=postgres_app
+      - POSTGRES_PASSWORD=postgres_password
+      - POSTGRES_DB=sqs
+
+networks:
+  backend:
+    external:
+      name: sqsnet
+
